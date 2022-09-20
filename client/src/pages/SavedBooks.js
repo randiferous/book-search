@@ -16,7 +16,7 @@ const SavedBooks = () => {
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
   const user = userData?.me || {};
-
+console.log(userData)
   if(!user?.username) {
     return (
       <h3>
