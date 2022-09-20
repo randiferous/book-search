@@ -16,8 +16,8 @@ const SavedBooks = () => {
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
   const user = userData?.me || {};
-console.log(userData)
-  if(!user?.username) {
+  console.log(userData)
+  if(!Auth.loggedIn()) {
     return (
       <h3>
         Please log in or sign up to view this page.
