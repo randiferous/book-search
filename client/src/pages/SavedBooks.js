@@ -12,11 +12,10 @@ import { GET_ME } from '../utils/queries';
 
 const SavedBooks = () => {
   // const [userData, setUserData] = useState({});
-  const { loading, userData } = useQuery(GET_ME);
+  const { loading, data } = useQuery(GET_ME);
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
-  const user = userData?.me || {};
-  console.log(userData)
+  const userData = data?.me || {};
   if(!Auth.loggedIn()) {
     return (
       <h3>
